@@ -54,7 +54,11 @@ extension TableViewController: UITableViewDataSource {
         
         //запросить прототип ячейки у TaleView
         let cell = tableView.dequeueReusableCellWithIdentifier("JustACellID", forIndexPath: indexPath)
+        
+        let fontName = items[indexPath.row]
+        let font = UIFont(name: fontName, size: 14)
         cell.textLabel?.text = items[indexPath.row]
+        cell.textLabel?.font = font
         
         return cell
         
